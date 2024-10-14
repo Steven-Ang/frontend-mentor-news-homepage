@@ -13,64 +13,134 @@
     <title>Frontend Mentor | News homepage</title>
   </head>
   <body>
-    <nav>
-      <img src="assets/images/logo.svg" alt="Main page logo" />
-      <ul>
-        <li>Home</li>
-        <li>New</li>
-        <li>Popular</li>
-        <li>Trending</li>
-        <li>Categories</li>
-      </ul>
-    </nav>
-    <main>
-      <h1>The Bright Future of Web 3.0?</h1>
-      <section>
-        <p>
-          We dive into the next evolution of the web that claims to put the
-          power of the platforms back into the hands of the people. But is it
-          really fulfilling its promise?
-        </p>
-        <button>Read more</button>
+    <div class="container">
+      <nav>
+        <img src="assets/images/logo.svg" alt="Main page logo" />
+        <ul>
+          <li>
+            <a class="navigation-link" href="#">Home</a>
+          </li>
+          <li>
+            <a class="navigation-link" href="#">New</a>
+          </li>
+          <li>
+            <a class="navigation-link" href="#">Popular</a>
+          </li>
+          <li><a class="navigation-link" href="#">Trending</a></li>
+          <li>
+            <a class="navigation-link" href="#">Categories</a>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <picture>
+          <source
+            srcset="assets/images/image-web-3-desktop.jpg"
+            media="(min-width: 720px)"
+          />
+          <img
+            class="banner"
+            src="assets/images/image-web-3-desktop.jpg"
+            alt="Banner"
+          />
+        </picture>
+        <h1 class="main-content-heading">The Bright Future of Web 3.0?</h1>
+        <section class="main-content-section">
+          <p class="main-content-subheading">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <a class="read-more-button" href="#">Read more </a>
+        </section>
+        <aside class="aside-section">
+          <h2 class="aside-section-heading">New</h2>
+          <section class="aside-section-content">
+            <section class="new-article-section">
+              <a class="new-article-link" href="#">
+                <h2 class="new-article-section-heading">
+                  Hydrogen VS Electric Cars
+                </h2>
+              </a>
+              <p class="new-article-section-subheading">
+                Will hydrogen-fueled cars ever catch up to EVs?
+              </p>
+            </section>
+            <section class="new-article-section">
+              <a class="new-article-link" href="#">
+                <h2 class="new-article-section-heading">
+                  The Downsides of AI Artistry
+                </h2>
+              </a>
+              <p class="new-article-section-subheading">
+                What are the possible adverse effects of on-demand AI image
+                generation?
+              </p>
+            </section>
+            <section class="new-article-section">
+              <a class="new-article-link" href="#">
+                <h2 class="new-article-section-heading">
+                  Is VC Funding Drying Up?
+                </h2>
+              </a>
+              <p class="new-article-section-subheading">
+                Private funding by VC firms is down 50% YOY. We take a look at
+                what that means.
+              </p>
+            </section>
+          </section>
+        </aside>
+      </main>
+      <section class="popular-article-section">
+        <article>
+          <img
+            class="article-image"
+            src="assets/images/image-retro-pcs.jpg"
+            alt="Retro computer"
+          />
+          <section class="article-section">
+            <span class="article-rank">01</span>
+            <a class="popular-article-link" href="#">
+              <h2 class="article-heading">Reviving Retro PCs</h2>
+            </a>
+            <p class="article-subheading">
+              What happens when old PCs are given modern upgrades?
+            </p>
+          </section>
+        </article>
+        <article>
+          <img
+            class="article-image"
+            src="assets/images/image-top-laptops.jpg"
+            alt="Keyboard zoomed in"
+          />
+          <section class="article-section">
+            <span class="article-rank">02</span>
+            <a class="popular-article-link" href="#">
+              <h2 class="article-heading">Top 10 Laptops of 2022</h2>
+            </a>
+            <p class="article-subheading">
+              Our best picks for various needs and budgets.
+            </p>
+          </section>
+        </article>
+        <article>
+          <img
+            class="article-image"
+            src="assets/images/image-gaming-growth.jpg"
+            alt="Controller floating on a hand"
+          />
+          <section class="article-section">
+            <span class="article-rank">03</span>
+            <a class="popular-article-link" href="#">
+              <h2 class="article-heading">The Growth of Gaming</h2>
+            </a>
+            <p class="article-subheading">
+              How the pandemic has sparked fresh opportunities.
+            </p>
+          </section>
+        </article>
       </section>
-    </main>
-    <aside>
-      <h2>New</h2>
-      <section>
-        <h2>Hydrogen VS Electric Cars</h2>
-        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-      </section>
-      <section>
-        <h2>The Downsides of AI Artistry</h2>
-        <p>
-          What are the possible adverse effects of on-demand AI image
-          generation?
-        </p>
-      </section>
-      <section>
-        <h2>Is VC Funding Drying Up?</h2>
-        <p>
-          Private funding by VC firms is down 50% YOY. We take a look at what
-          that means.
-        </p>
-      </section>
-    </aside>
-    <section>
-      <article>
-        <span>01</span>
-        <h2>Reviving Retro PCs</h2>
-        <p>What happens when old PCs are given modern upgrades?</p>
-      </article>
-      <article>
-        <span>02</span>
-        <h2>Top 10 Laptops of 2022</h2>
-        <p>Our best picks for various needs and budgets.</p>
-      </article>
-      <article>
-        <span>03</span>
-        <h2>The Growth of Gaming</h2>
-        <p>How the pandemic has sparked fresh opportunities.</p>
-      </article>
-    </section>
+    </div>
   </body>
 </html>

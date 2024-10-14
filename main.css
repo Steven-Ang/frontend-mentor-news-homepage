@@ -1,0 +1,259 @@
+@font-face {
+  font-family: "Karla";
+  src: url("assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+
+  --white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 0.9375em;
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  min-height: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 3em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+p,
+li {
+  color: var(--dark-grayish-blue);
+  line-height: 1.6;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "banner"
+    "main-heading"
+    "main-content-section"
+    "aside-section";
+  gap: 2em;
+}
+
+@media only screen and (min-width: 1120px) {
+  main {
+    grid-template-areas:
+      "banner banner aside-section"
+      "main-heading main-content-section aside-section";
+  }
+
+  .aside-section {
+    margin-top: 0;
+  }
+}
+
+article {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+picture {
+  display: grid;
+  grid-area: banner;
+  width: 100%;
+  height: 100%;
+}
+
+source {
+  display: none;
+}
+
+.container {
+  display: grid;
+  gap: 4em;
+  width: 80%;
+  margin: 4em auto;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-content-heading {
+  grid-area: main-heading;
+}
+
+.main-content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  grid-area: main-content-section;
+}
+
+.read-more-button {
+  display: inline-block;
+  border: none;
+  padding: 1.2em 1em;
+  background-color: tomato;
+  font-size: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 14em;
+  letter-spacing: 0.6ch;
+  cursor: pointer;
+  text-align: center;
+}
+
+.read-more-button:is(:active, :hover, :active) {
+  color: var(--white);
+  background-color: var(--very-dark-blue);
+}
+
+.aside-section {
+  display: flex;
+  flex-direction: column;
+  grid-area: aside-section;
+  padding: 2em;
+  gap: 2em;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  margin-top: 2em;
+}
+
+@media only screen and (min-width: 1120px) {
+  .aside-section {
+    margin-top: 0;
+  }
+}
+
+.aside-section-heading {
+  font-size: 3em;
+  color: var(--soft-orange);
+}
+
+.aside-section-content {
+  display: grid;
+  gap: 2em;
+}
+
+.new-article-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-bottom: 0.066em solid var(--dark-grayish-blue);
+  padding-bottom: 2em;
+}
+
+.new-article-section:last-child {
+  padding-bottom: 0;
+}
+
+.new-article-section:last-child {
+  border: none;
+}
+
+.new-article-section-subheading {
+  color: var(--grayish-blue);
+}
+
+.popular-article-section {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 919px) {
+  .popular-article-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1120px) {
+  .popular-article-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.article-image {
+  width: 6em;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.article-rank {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--soft-red);
+}
+
+.article-heading {
+  font-weight: 800;
+}
+
+.navigation-link:is(:active, :hover, :focus),
+.new-article-link:is(:active, :hover, :focus) {
+  color: var(--soft-orange);
+  outline-color: var(--soft-orange);
+}
+
+.popular-article-link:is(:active, :hover, :focus) {
+  color: var(--soft-red);
+  outline-color: var(--soft-red);
+}
