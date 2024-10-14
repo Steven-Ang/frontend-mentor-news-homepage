@@ -45,18 +45,18 @@ body {
   place-items: center;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   min-height: 100%;
+  padding: 2em 0;
+  gap: 2em;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 ul {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   list-style-type: none;
   gap: 3em;
@@ -88,7 +88,7 @@ main {
   gap: 2em;
 }
 
-@media only screen and (min-width: 1120px) {
+@media (width >= 74.66em) {
   main {
     grid-template-areas:
       "banner banner aside-section"
@@ -118,10 +118,75 @@ source {
 }
 
 .container {
-  display: grid;
-  gap: 4em;
   width: 80%;
-  margin: 4em auto;
+}
+
+.content {
+  display: grid;
+  gap: 2em;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.open-menu-button[aria-hidden="true"] ~ .navigation {
+  display: flex;
+}
+
+.open-menu-button,
+.close-menu-button,
+.navigation-overlay {
+  display: none;
+}
+
+@media (width < 42em) {
+  .open-menu-button {
+    display: flex;
+  }
+
+  .navigation-content {
+    display: none;
+  }
+
+  .top-header:has(.open-menu-button[aria-expanded="true"]) .navigation-content {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    inset: 0 0 0 9em;
+    background-color: var(--white);
+    width: 80%;
+    text-align: left;
+    padding: 2em;
+  }
+
+  .top-header:has(.open-menu-button[aria-expanded="true"]) .navigation-overlay {
+    display: flex;
+    position: fixed;
+    background-color: var(--very-dark-blue);
+    inset: 0;
+    opacity: 0.5;
+  }
+
+  .navigation-links {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2em;
+    gap: 1em;
+  }
+
+  .navigation-link {
+    color: var(--very-dark-blue);
+  }
+
+  .close-menu-button {
+    display: block;
+    position: absolute;
+    top: 2em;
+    right: 3em;
+  }
 }
 
 .banner {
@@ -151,7 +216,6 @@ source {
   text-transform: uppercase;
   width: 14em;
   letter-spacing: 0.6ch;
-  cursor: pointer;
   text-align: center;
 }
 
@@ -168,7 +232,6 @@ source {
   gap: 2em;
   background-color: var(--very-dark-blue);
   color: var(--white);
-  margin-top: 2em;
 }
 
 @media only screen and (min-width: 1120px) {
@@ -213,13 +276,13 @@ source {
   grid-template-columns: 1fr;
 }
 
-@media only screen and (min-width: 919px) {
+@media (width > 61.26em) {
   .popular-article-section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media only screen and (min-width: 1120px) {
+@media (width >= 74.66em) {
   .popular-article-section {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -256,4 +319,8 @@ source {
 .popular-article-link:is(:active, :hover, :focus) {
   color: var(--soft-red);
   outline-color: var(--soft-red);
+}
+
+.hidden {
+  display: none;
 }

@@ -13,30 +13,68 @@
     <title>Frontend Mentor | News homepage</title>
   </head>
   <body>
-    <div class="container">
-      <nav>
-        <img src="assets/images/logo.svg" alt="Main page logo" />
-        <ul>
-          <li>
-            <a class="navigation-link" href="#">Home</a>
-          </li>
-          <li>
-            <a class="navigation-link" href="#">New</a>
-          </li>
-          <li>
-            <a class="navigation-link" href="#">Popular</a>
-          </li>
-          <li><a class="navigation-link" href="#">Trending</a></li>
-          <li>
-            <a class="navigation-link" href="#">Categories</a>
-          </li>
-        </ul>
+    <header class="top-header container" aria-label="Navigation">
+      <img src="assets/images/logo.svg" alt="Main page logo" />
+
+      <div
+        id="navigation-overlay"
+        class="navigation-overlay"
+        aria-hidden="true"
+      ></div>
+
+      <nav class="navigation">
+        <span hidden>Navigation</span>
+        <button
+          id="open-menu-button"
+          class="open-menu-button"
+          aria-expanded="false"
+          aria-hidden="false"
+        >
+          <img
+            src="assets/images/icon-menu.svg"
+            alt="Hamburger menu"
+            aria-hidden="false"
+          />
+        </button>
+        <div id="navigation-content" class="navigation-content" role="dialog">
+          <button
+            id="close-menu-button"
+            class="close-menu-button"
+            aria-label="Close"
+          >
+            <img
+              class="menu-button"
+              src="assets/images/icon-menu-close.svg"
+              alt="Hamburger menu"
+              aria-hidden="false"
+            />
+          </button>
+          <ul class="navigation-links">
+            <li class="navigation-item">
+              <a class="navigation-link" href="#">Home</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="#">New</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="#">Popular</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="#">Trending</a>
+            </li>
+            <li class="navigation-item">
+              <a class="navigation-link" href="#">Categories</a>
+            </li>
+          </ul>
+        </div>
       </nav>
+    </header>
+    <div class="content container">
       <main>
         <picture>
           <source
-            srcset="assets/images/image-web-3-desktop.jpg"
-            media="(min-width: 720px)"
+            srcset="assets/images/image-web-3-mobile.jpg"
+            media="(width < 42em)"
           />
           <img
             class="banner"
@@ -58,9 +96,9 @@
           <section class="aside-section-content">
             <section class="new-article-section">
               <a class="new-article-link" href="#">
-                <h2 class="new-article-section-heading">
+                <h3 class="new-article-section-heading">
                   Hydrogen VS Electric Cars
-                </h2>
+                </h3>
               </a>
               <p class="new-article-section-subheading">
                 Will hydrogen-fueled cars ever catch up to EVs?
@@ -68,9 +106,9 @@
             </section>
             <section class="new-article-section">
               <a class="new-article-link" href="#">
-                <h2 class="new-article-section-heading">
+                <h3 class="new-article-section-heading">
                   The Downsides of AI Artistry
-                </h2>
+                </h3>
               </a>
               <p class="new-article-section-subheading">
                 What are the possible adverse effects of on-demand AI image
@@ -79,9 +117,9 @@
             </section>
             <section class="new-article-section">
               <a class="new-article-link" href="#">
-                <h2 class="new-article-section-heading">
+                <h3 class="new-article-section-heading">
                   Is VC Funding Drying Up?
-                </h2>
+                </h3>
               </a>
               <p class="new-article-section-subheading">
                 Private funding by VC firms is down 50% YOY. We take a look at
@@ -101,7 +139,7 @@
           <section class="article-section">
             <span class="article-rank">01</span>
             <a class="popular-article-link" href="#">
-              <h2 class="article-heading">Reviving Retro PCs</h2>
+              <h3 class="article-heading">Reviving Retro PCs</h3>
             </a>
             <p class="article-subheading">
               What happens when old PCs are given modern upgrades?
@@ -117,7 +155,7 @@
           <section class="article-section">
             <span class="article-rank">02</span>
             <a class="popular-article-link" href="#">
-              <h2 class="article-heading">Top 10 Laptops of 2022</h2>
+              <h3 class="article-heading">Top 10 Laptops of 2022</h3>
             </a>
             <p class="article-subheading">
               Our best picks for various needs and budgets.
@@ -133,7 +171,7 @@
           <section class="article-section">
             <span class="article-rank">03</span>
             <a class="popular-article-link" href="#">
-              <h2 class="article-heading">The Growth of Gaming</h2>
+              <h3 class="article-heading">The Growth of Gaming</h3>
             </a>
             <p class="article-subheading">
               How the pandemic has sparked fresh opportunities.
@@ -142,5 +180,7 @@
         </article>
       </section>
     </div>
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
