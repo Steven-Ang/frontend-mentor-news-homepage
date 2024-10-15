@@ -129,7 +129,6 @@ source {
   }
 }
 
-
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -153,13 +152,16 @@ source {
   gap: 3em;
 }
 
-.navigation-link {
-  color: var(--very-dark-blue);
-}
-
 @media (width < 42em) {
   .open-menu-button {
     display: flex;
+  }
+
+  .close-menu-button {
+    display: block;
+    position: absolute;
+    top: 2em;
+    right: 3em;
   }
 
   .navigation-content {
@@ -193,11 +195,8 @@ source {
     gap: 1em;
   }
 
-  .close-menu-button {
-    display: block;
-    position: absolute;
-    top: 2em;
-    right: 3em;
+  .navigation-link {
+    color: var(--very-dark-blue);
   }
 }
 
