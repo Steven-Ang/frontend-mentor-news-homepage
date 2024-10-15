@@ -185,7 +185,6 @@ source {
     background-color: var(--very-dark-blue);
     inset: 0;
     opacity: 0.5;
-    transition: display ease-in 1000;
   }
 
   .navigation-links {
