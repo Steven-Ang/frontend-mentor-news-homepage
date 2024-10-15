@@ -122,7 +122,7 @@ source {
   gap: 4em;
 }
 
-@media (width < 42em) {
+@media (width < 74.66em) {
   body,
   .content {
     gap: 2em;
