@@ -37,12 +37,16 @@ const handleResize = () => {
     closeMenuButton.setAttribute("aria-hidden", "true");
     navigationContent.setAttribute("inert", "");
     mainContent.removeAttribute("inert");
+
+    bodyScrollLock.enableBodyScroll(body);
   } else {
     openMenuButton.setAttribute("aria-expanded", "false");
     openMenuButton.setAttribute("aria-hidden", "true");
     closeMenuButton.setAttribute("aria-hidden", "true");
     navigationContent.removeAttribute("inert");
     mainContent.removeAttribute("inert");
+
+    bodyScrollLock.enableBodyScroll(body);
   }
 };
 
