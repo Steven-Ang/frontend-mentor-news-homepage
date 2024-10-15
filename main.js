@@ -2,6 +2,7 @@ const body = document.querySelector("body");
 const openMenuButton = document.getElementById("open-menu-button");
 const closeMenuButton = document.getElementById("close-menu-button");
 const navigationContent = document.getElementById("navigation-content");
+const mainContent = document.querySelector(".content");
 
 const bodyScrollLock = bodyScrollLockUpgrade;
 
@@ -11,6 +12,7 @@ const openMenu = () => {
   openMenuButton.setAttribute("aria-expanded", "true");
   closeMenuButton.setAttribute("aria-hidden", "false");
   navigationContent.removeAttribute("inert");
+  mainContent.setAttribute("inert", "");
 
   bodyScrollLock.disableBodyScroll(body);
 
@@ -20,7 +22,8 @@ const openMenu = () => {
 const closeMenu = () => {
   openMenuButton.setAttribute("aria-expanded", "false");
   closeMenuButton.setAttribute("aria-hidden", "true");
-  navigationContent.setAttribute("inert", "");
+  navigationContent.removeAttribute("inert");
+  mainContent.removeAttribute("inert");
 
   bodyScrollLock.enableBodyScroll(body);
 
@@ -33,11 +36,13 @@ const handleResize = () => {
     openMenuButton.setAttribute("aria-hidden", "false");
     closeMenuButton.setAttribute("aria-hidden", "true");
     navigationContent.setAttribute("inert", "");
+    mainContent.removeAttribute("inert");
   } else {
     openMenuButton.setAttribute("aria-expanded", "false");
     openMenuButton.setAttribute("aria-hidden", "true");
     closeMenuButton.setAttribute("aria-hidden", "true");
     navigationContent.removeAttribute("inert");
+    mainContent.removeAttribute("inert");
   }
 };
 
