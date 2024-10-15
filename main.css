@@ -46,7 +46,7 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   min-height: 100%;
   padding: 2em 0;
-  gap: 2em;
+  gap: 4em;
 }
 
 button {
@@ -111,9 +111,15 @@ source {
   width: 80%;
 }
 
+@media (width < 42em) {
+  .container {
+    width: 95%;
+  }
+}
+
 .content {
   display: grid;
-  gap: 2em;
+  gap: 4em;
 }
 
 .top-header {
