@@ -122,6 +122,14 @@ source {
   gap: 4em;
 }
 
+@media (width < 42em) {
+  body,
+  .content {
+    gap: 2em;
+  }
+}
+
+
 .top-header {
   display: flex;
   justify-content: space-between;
