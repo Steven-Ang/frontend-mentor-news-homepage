@@ -22,21 +22,27 @@
         aria-hidden="true"
       ></div>
 
-      <nav class="navigation">
-        <span hidden>Navigation</span>
+      <nav class="navigation" aria-label="Site">
         <button
           id="open-menu-button"
           class="open-menu-button"
           aria-expanded="false"
           aria-hidden="false"
+          aria-labelledby="navigation-label"
         >
+          <span id="navigation-label" hidden>Navigation</span>
           <img
             src="assets/images/icon-menu.svg"
             alt="Hamburger menu"
             aria-hidden="false"
           />
         </button>
-        <div id="navigation-content" class="navigation-content" role="dialog">
+        <div
+          id="navigation-content"
+          class="navigation-content"
+          role="dialog"
+          aria-labelledby="navigation-label"
+        >
           <button
             id="close-menu-button"
             class="close-menu-button"
