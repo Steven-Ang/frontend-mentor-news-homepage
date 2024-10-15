@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Karla";
+  font-family: "Inter";
   src: url("assets/fonts/static/Inter-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -63,6 +63,7 @@ a {
 
 h1 {
   font-size: 4em;
+  line-height: 1;
 }
 
 p,
